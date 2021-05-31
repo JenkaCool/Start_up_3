@@ -94,7 +94,7 @@ void Snake::gameOver(QPainter &qp) {
     // Параметры текста
     QFont font("Courier", 15, QFont::DemiBold);
     QFontMetrics fm(font);
-    int textWidth = fm.horizontalAdvance(message);
+    int textWidth = fm.width(message);
 
     qp.setPen(QColor(Qt::white));
     qp.setFont(font);
