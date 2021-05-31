@@ -16,7 +16,7 @@ addons:
   sonarcloud:
     organization: "jenkajenka"
     token: $SONAR_TOKEN
-
+	//secure:
 script:
   - qmake
   - make
