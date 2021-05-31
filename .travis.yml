@@ -1,0 +1,24 @@
+language:
+  - cpp
+
+before_install:
+  - pip install --user cpp-coveralls
+
+addons:
+  sonarcloud:
+    organization: "jenkajenka"
+    token: $SONAR_TOKEN
+      secure: travis encrypt c2b952158eea385c970974cf62565e6c52b1151a
+
+script:
+  - qmake
+  - make
+  - ./tests/tests
+
+after_success:
+  - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+
+notifications:
+  email: false
