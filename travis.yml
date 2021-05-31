@@ -1,3 +1,6 @@
+os: linux
+dist: bionic
+
 language:
   - cpp
 
@@ -8,7 +11,6 @@ addons:
   sonarcloud:
     organization: "jenkajenka"
     token: $SONAR_TOKEN
-      secure: 7d9b0e4d606f940b7e46134e88edf7da59c4b6ca
 
 script:
   - qmake
@@ -22,3 +24,4 @@ after_success:
 
 notifications:
   email: false
+
