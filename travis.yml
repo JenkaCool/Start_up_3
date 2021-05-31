@@ -8,7 +8,7 @@ addons:
   sonarcloud:
     organization: "jenkajenka"
     token: $SONAR_TOKEN
-      secure: a66ef260975338816298ff6035ad9a4981c547ea
+      secure: 7d9b0e4d606f940b7e46134e88edf7da59c4b6ca
 
 script:
   - qmake
